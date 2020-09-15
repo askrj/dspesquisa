@@ -21,10 +21,12 @@ public class Record implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String nome;
+	private String name;
 	private Integer age;
 	private Instant moment;
 	
+	@ManyToOne
+	@JoinColumn(name = "game_id")
 	private Game game;
 	
 	public Record() {
@@ -34,7 +36,7 @@ public class Record implements Serializable {
 	public Record(Long id, String nome, Integer age, Instant moment, Game game) {
 		super();
 		this.id = id;
-		this.nome = nome;
+		this.name = nome;
 		this.age = age;
 		this.moment = moment;
 		this.game = game;
@@ -49,11 +51,11 @@ public class Record implements Serializable {
 	}
 
 	public String getNome() {
-		return nome;
+		return name;
 	}
 
 	public void setNome(String nome) {
-		this.nome = nome;
+		this.name = nome;
 	}
 
 	public Integer getAge() {
