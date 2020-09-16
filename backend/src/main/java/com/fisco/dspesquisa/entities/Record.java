@@ -33,10 +33,10 @@ public class Record implements Serializable {
 		
 	}
 
-	public Record(Long id, String nome, Integer age, Instant moment, Game game) {
+	public Record(Long id, String name, Integer age, Instant moment, Game game) {
 		super();
 		this.id = id;
-		this.name = nome;
+		this.name = name;
 		this.age = age;
 		this.moment = moment;
 		this.game = game;
@@ -50,12 +50,12 @@ public class Record implements Serializable {
 		this.id = id;
 	}
 
-	public String getNome() {
+	public String getName() {
 		return name;
 	}
 
-	public void setNome(String nome) {
-		this.name = nome;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public Integer getAge() {
